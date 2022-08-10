@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <form method="POST" id="form_login" class="uk-form-horizontal uk-grid-small element" uk-grid style="margin: auto; width: 500px;">
+        {% csrf_token %}
+        <div class="uk-width-1-2@s">
+           <label class="uk-form-label">Email </label>
+           <input class="uk-input" type="email" name="email" placeholder="Enter recipient email..."/>
+        </div>
+        <div class="uk-width-1-2@s">
+           <label class="uk-form-label">Subject </label>
+           <input class="uk-input" type="text" name="subject" placeholder="Enter message subject..."/>
+        </div>
+        <div class="uk-width-1-1">
+           <label class="uk-form-label">Content </label>
+            <textarea class="uk-textarea" rows="5" type="text" name="content" placeholder="Enter message content..."></textarea>
+        </div>
+        <input class="uk-button uk-button-default" type="submit" value="Send a message" style="margin: auto; margin-top: 20px;" />
+    </form>
+
+{% endblock %}
